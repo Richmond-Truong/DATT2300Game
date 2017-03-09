@@ -85,6 +85,12 @@ public class Player : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+            if (controller.collisions.whatHitX.CompareTag("NextRoom")){
+                if(controller.collisions.whatHitX.name == "2")
+                {
+                    Application.LoadLevel("scene1");
+                }
+            }
         }
 
         if (controller.collisions.below)
