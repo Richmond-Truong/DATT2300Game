@@ -210,6 +210,12 @@ public class Player : MonoBehaviour
                     controller.collisions.whatHitX.GetComponent<DoorController>().open = true;
                 }
             }
+            if (controller.collisions.whatHitX.CompareTag("NoLockDoor"))
+            {
+               
+                    controller.collisions.whatHitX.GetComponent<NoLockDoor>().open = true;
+                
+            }
             if (controller.collisions.whatHitX.CompareTag("Key"))
             {
                 key++;

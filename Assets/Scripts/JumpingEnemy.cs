@@ -15,7 +15,7 @@ public class JumpingEnemy : Enemy {
 	void Update () {
 
         jump();   
-        controller.Move(velocity * Time.deltaTime, new Vector2(0, 1));
+        controller.Move(velocity * Time.deltaTime, new Vector2(0, 0));
         if (controller.collisions.left || controller.collisions.right )
         {
             hitX();
@@ -31,11 +31,13 @@ public class JumpingEnemy : Enemy {
         if (!controller.collisions.below)
         {
             velocity.y -= gravity * Time.deltaTime;
+            
         }
         //print(Time.time);
         if (Time.time > nextJumpTime)
         {
             velocity.y = 10;
+            
             nextJumpTime = Time.time + waitTime;
         }
     }
