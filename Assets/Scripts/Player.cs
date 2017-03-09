@@ -73,7 +73,20 @@ public class Player : MonoBehaviour
             {
                 velocity.y = 0;
             }
+
+            if (controller.collisions.whatHitY.CompareTag("Bounds"))
+            {
+                Destroy(this.gameObject);
+            }
         }
+        if (controller.collisions.right || controller.collisions.left)
+        {
+            if(controller.collisions.whatHitX.CompareTag("Bounds"))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
         if (controller.collisions.below)
         {
             numJump = 2;
