@@ -38,6 +38,10 @@ public class BulletMovement1 : MonoBehaviour
         {
             Destroy(controller.collisions.whatHitX);
         }
+        if (controller.collisions.whatHitX.CompareTag("Boss"))
+        {
+            controller.collisions.whatHitX.GetComponent<Boss>().loseHealth();
+        }
     }
     
 }
